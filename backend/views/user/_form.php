@@ -1,0 +1,83 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model backend\models\User */
+/* @var $form yii\widgets\ActiveForm */
+?>
+<?php $form = ActiveForm::begin(); ?>
+
+<div class="user-form" style="padding-top: 2%">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <?= Yii::t('app', 'System User (Office Staff User) Form'); ?>
+        </div>
+        <div class="panel-body">
+            <div class="box-body">
+
+                <div class="col-xs-12 col-lg-12 col-sm-12">
+                    <div class="col-sm-12 no-padding">
+                        <div class="col-sm-6">
+                            <?= $form->field($model, 'full_name')->textInput(['maxlength' => true,  'placeholder'=>'Full name','required'=>true]) ?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?= $form->field($model, 'username', ['enableAjaxValidation' => true])->textInput(['autofocus' => true,'required'=>true]) ?>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12 no-padding">
+                        <div class="col-sm-6">
+
+                            <?= $form->field($model, 'password')->passwordInput(['maxlength' => true, 'placeholder'=>'Password','required'=>true]) ?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?= $form->field($model, 'repassword')->passwordInput(['maxlength' => true, 'placeholder'=>'Re-password','required'=>true]) ?>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 no-padding">
+                        <div class="col-sm-4">
+
+                            <?= $form->field($model, 'branch')->dropDownList(
+                                \backend\models\Branches::getAll(),           // Flat array ('id'=>'label')
+                                ['prompt'=>'Select branch','required'=>true]    // options
+                            ); ?>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <?= $form->field($model, 'mobile')->textInput(['maxlength' => true,'placeholder'=>'Mobile number']) ?>
+                        </div>
+                        <div class="col-sm-4">
+                            <?= $form->field($model, 'email', ['enableAjaxValidation' => true])->textInput(['autofocus' => true,'required'=>true]) ?>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 no-padding">
+
+                        <div class="col-sm-4">
+                            <?= $form->field($model, 'role')->dropDownList(\backend\models\User::getRules(), ['prompt' => '-- select role name --','required'=>true]) ?>
+                        </div>
+                        <div class="col-sm-4">
+                            <?= $form->field($model, 'status')->dropDownList(\backend\models\User::getArrayStatus(),['prompt' => '-- select Status --','required'=>true]) ?>
+                        </div>
+                        <div class="col-sm-4">
+                            <?= $form->field($model, 'user_type')->dropDownList(\backend\models\User::getUserType(),['prompt' => '-- select user type --','required'=>true]) ?>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-xs-12 col-sm-6 col-lg-4">
+                        <div class="col-xs-6 col-xs-12">
+                            <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Save') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-block btn-success' : 'btn btn-block btn-info']) ?>
+                        </div>
+                        <div class="col-xs-6 col-xs-12">
+                            <?= Html::a(Yii::t('app', 'Cancel'), ['index'], ['class' => 'btn btn-warning btn-block']) ?>
+                        </div>
+                    </div>
+                    <?php ActiveForm::end(); ?>
+                </div>
+            </div><!---./end box-body--->
+        </div><!---./end box--->
+    </div>
+</div>

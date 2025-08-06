@@ -1,0 +1,25 @@
+/vendor/
+/uploads/devices/LFWhA2024051042.csv
+/uploads/devices/SvbHF2024051055.csv
+/.idea/
+/error_log
+
+# Ignore large files by extension
+*.zip
+*.tar.gz
+*.mp4
+*.mov
+*.avi
+*.pdf
+*.psd
+*.iso
+*.dmg
+*.exe
+
+# Specific large files (if needed)
+admin-login/favicon.zip
+
+
+
+
+

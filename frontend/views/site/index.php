@@ -9,6 +9,7 @@ use kartik\grid\GridView;
 use yii\helpers\Html;
 
 $this->title = '';
+
 ?>
 
 <div class="row">

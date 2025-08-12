@@ -31,7 +31,6 @@ use yii\db\Query;
 class Devices extends \yii\db\ActiveRecord
 {
 
-
     const registration = 1;
     const accounts = 2;
     const new_items = 3;
@@ -47,6 +46,9 @@ class Devices extends \yii\db\ActiveRecord
     const fault_devices = 11;
     const damaged = 12;
     const return_to_office = 13;
+
+    const SALES_ORDER_PENDING_STATUS = "PENDING";
+    const SALES_ORDER_CREATED_STATUS = "CREATED";
 
     /**
      * {@inheritdoc}

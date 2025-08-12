@@ -59,7 +59,7 @@ return [
                     'confirm-receive','transit-devices','device-to-confirm','released','all-devices',
                     'port-gates','staffs','customers','edit-sale','transfer','child','search-tzl',
                     'border-devices','scan','devices-at-border','office-return','intransit-devices',
-                    'return-intransit','devices-returned'],
+                    'return-intransit','devices-returned','get-records','post-records'],
             ],
             [
                 'allow' => true,

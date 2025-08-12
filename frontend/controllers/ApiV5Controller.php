@@ -1350,7 +1350,6 @@ class ApiV5Controller extends \yii\rest\ActiveController
 
     }
 
-
     public function actionBorders()
     {
         \Yii::$app->response->format = \yii\web\Response:: FORMAT_JSON;
@@ -2142,7 +2141,6 @@ class ApiV5Controller extends \yii\rest\ActiveController
 
 
     }
-
 
     public function actionIntransitDevices($user_id)
     {
